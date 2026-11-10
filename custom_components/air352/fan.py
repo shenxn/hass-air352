@@ -39,7 +39,7 @@ async def async_setup_entry(
     coordinator: Air352Coordinator = hass.data[DOMAIN][entry.entry_id]
     entities = []
     for device in coordinator.devices:
-        category = device.get("categoryKey", "")
+        category = (device.get("categoryKey") or "").casefold()
         if category != DEVICE_TYPE_AIR:
             continue
         iot_id = device["iotId"]

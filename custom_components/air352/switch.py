@@ -53,7 +53,7 @@ async def async_setup_entry(
     coordinator: Air352Coordinator = hass.data[DOMAIN][entry.entry_id]
     entities = []
     for device in coordinator.devices:
-        category = device.get("categoryKey", "")
+        category = (device.get("categoryKey") or "").casefold()
         iot_id = device["iotId"]
         props = coordinator.data.get(iot_id, {}) if coordinator.data else {}
         for desc in SWITCH_DESCRIPTIONS:

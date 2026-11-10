@@ -10,6 +10,7 @@ from gzip import decompress as gzip_decompress
 from urllib.parse import quote
 
 import aiohttp
+from aiohttp.http import SERVER_SOFTWARE as AIOHTTP_USER_AGENT
 
 from .const import (
     APPID_352, BASE_URL_352, ALI_APP_KEY, ALI_APP_SECRET,
@@ -57,6 +58,7 @@ class Air352ApiClient:
         return {
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": f"Token {token}",
+            "User-Agent": AIOHTTP_USER_AGENT,
             "ts": ts,
             "sign": sign,
         }
