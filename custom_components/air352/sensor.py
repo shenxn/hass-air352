@@ -93,13 +93,13 @@ SENSOR_DESCRIPTIONS: list[Air352SensorDescription] = [
         key="FilterLifeTimePercent_2", name="Filter 2 Life",
         native_unit_of_measurement=PERCENTAGE, state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:air-filter",
-        category_keys=(DEVICE_TYPE_AIR, DEVICE_TYPE_PURIFIER),
+        category_keys=(DEVICE_TYPE_HUMIDIFIER, DEVICE_TYPE_AIR, DEVICE_TYPE_PURIFIER),
     ),
     Air352SensorDescription(
         key="FilterLifeTimePercent_3", name="Filter 3 Life",
         native_unit_of_measurement=PERCENTAGE, state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:air-filter",
-        category_keys=(DEVICE_TYPE_AIR,),
+        category_keys=(DEVICE_TYPE_HUMIDIFIER, DEVICE_TYPE_AIR,),
     ),
     # ── Water purifier sensors ──
     Air352SensorDescription(
