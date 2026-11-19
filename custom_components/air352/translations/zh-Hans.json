@@ -27,6 +27,20 @@
     }
   },
   "entity": {
+    "humidifier": {
+      "humidifier": {
+        "name": "加湿器",
+        "state_attributes": {
+          "mode": {
+            "state": {
+              "auto": "自动",
+              "sleep": "睡眠",
+              "manual": "手动"
+            }
+          }
+        }
+      }
+    },
     "number": {
       "targethumidity": {
         "name": "目标湿度"

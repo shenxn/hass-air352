@@ -27,6 +27,20 @@
     }
   },
   "entity": {
+    "humidifier": {
+      "humidifier": {
+        "name": "Humidifier",
+        "state_attributes": {
+          "mode": {
+            "state": {
+              "auto": "Auto",
+              "sleep": "Sleep",
+              "manual": "Manual"
+            }
+          }
+        }
+      }
+    },
     "number": {
       "targethumidity": {
         "name": "Target Humidity"

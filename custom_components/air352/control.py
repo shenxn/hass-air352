@@ -32,13 +32,13 @@ class Air352Control(CoordinatorEntity):
     def available(self):
         return super().available and self.value() is not None
 
-    async def write_value(self, value):
+    async def write_value(self, value, key=None):
         lock = self.coordinator.control_locks.setdefault(self.iot_id, asyncio.Lock())
         async with lock:
-            await self._write_and_readback(value)
+            await self._write_and_readback(value, key or self.key)
 
-    async def _write_and_readback(self, value):
-        await self.coordinator.api.set_device_properties(self.iot_id, {self.key: value})
+    async def _write_and_readback(self, value, key):
+        await self.coordinator.api.set_device_properties(self.iot_id, {key: value})
         for _ in range(5):
             await asyncio.sleep(3)
             # Read all properties: mode and speed commands can also change power
@@ -48,6 +48,6 @@ class Air352Control(CoordinatorEntity):
                 **(self.coordinator.data or {}),
                 self.iot_id: properties,
             })
-            if self.value() == value:
+            if self.value(key) == value:
                 return
         raise HomeAssistantError("352 did not confirm the requested setting")

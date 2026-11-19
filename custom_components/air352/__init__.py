@@ -11,7 +11,7 @@ from .coordinator import Air352Coordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS = [Platform.FAN, Platform.SENSOR, Platform.SWITCH, Platform.NUMBER, Platform.SELECT]
+PLATFORMS = [Platform.FAN, Platform.SENSOR, Platform.SWITCH, Platform.NUMBER, Platform.SELECT, Platform.HUMIDIFIER]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
