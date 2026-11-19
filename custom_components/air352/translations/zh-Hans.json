@@ -28,6 +28,8 @@
   },
   "entity": {
     "sensor": {
+      "surpluswater": { "name": "主水箱剩余水量" },
+      "extendedwater": { "name": "增程水箱剩余水量" },
       "pm25": { "name": "PM2.5" },
       "tvoc": { "name": "TVOC" },
       "hcho": { "name": "甲醛" },

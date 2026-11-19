@@ -27,6 +27,10 @@
     }
   },
   "entity": {
+    "sensor": {
+      "surpluswater": { "name": "Main Tank Water Level" },
+      "extendedwater": { "name": "Extension Tank Water Level" }
+    },
     "fan": {
       "air_purifier": {
         "state_attributes": {

@@ -25,5 +25,11 @@
       "already_configured": "This account is already configured",
       "reauth_successful": "Re-authentication successful"
     }
+  },
+  "entity": {
+    "sensor": {
+      "surpluswater": { "name": "Main Tank Water Level" },
+      "extendedwater": { "name": "Extension Tank Water Level" }
+    }
   }
 }

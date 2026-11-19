@@ -67,6 +67,21 @@ SENSOR_DESCRIPTIONS: list[Air352SensorDescription] = [
         device_class=SensorDeviceClass.HUMIDITY, state_class=SensorStateClass.MEASUREMENT,
         category_keys=(DEVICE_TYPE_AIR, DEVICE_TYPE_HUMIDIFIER),
     ),
+    # Humidifier tank levels, as reported by the device's cloud model.
+    Air352SensorDescription(
+        key="surplusWater", name="Main Tank Water Level",
+        native_unit_of_measurement=PERCENTAGE,
+        state_class=SensorStateClass.MEASUREMENT,
+        icon="mdi:water-percent",
+        category_keys=(DEVICE_TYPE_HUMIDIFIER,),
+    ),
+    Air352SensorDescription(
+        key="extendedWater", name="Extension Tank Water Level",
+        native_unit_of_measurement=PERCENTAGE,
+        state_class=SensorStateClass.MEASUREMENT,
+        icon="mdi:water-percent",
+        category_keys=(DEVICE_TYPE_HUMIDIFIER,),
+    ),
     # ── Filter life sensors (all device types) ──
     Air352SensorDescription(
         key="FilterLifeTimePercent_1", name="Filter 1 Life",
