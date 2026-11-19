@@ -42,21 +42,21 @@ class Air352Humidifier(Air352Control, HumidifierEntity):
 
     @property
     def is_on(self):
-        value = self.value("PowerSwitch")
+        value = self.read_property("PowerSwitch")
         return None if value is None else bool(value)
 
     @property
     def current_humidity(self):
-        return self.value("RelativeHumidity")
+        return self.read_property("RelativeHumidity")
 
     @property
     def target_humidity(self):
-        return self.value("targetHumidity")
+        return self.read_property("targetHumidity")
 
     @property
     def mode(self):
         return next(
-            (name for name, value in MODES.items() if value == self.value("WorkMode")),
+            (name for name, value in MODES.items() if value == self.read_property("WorkMode")),
             None,
         )
 

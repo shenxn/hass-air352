@@ -28,7 +28,7 @@ class Air352Mode(Air352Control, SelectEntity):
 
     @property
     def current_option(self):
-        return next((name for name, value in MODES.items() if value == self.value()), None)
+        return next((name for name, value in MODES.items() if value == self.read_property()), None)
 
     async def async_select_option(self, option):
         if option not in MODES:

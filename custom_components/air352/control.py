@@ -24,13 +24,13 @@ class Air352Control(CoordinatorEntity):
             "name": device.get("productName", "352 Device"),
         }
 
-    def value(self, key=None):
+    def read_property(self, key=None):
         prop = (self.coordinator.data or {}).get(self.iot_id, {}).get(key or self.key)
         return prop.get("value") if isinstance(prop, dict) else prop
 
     @property
     def available(self):
-        return super().available and self.value() is not None
+        return super().available and self.read_property() is not None
 
     async def write_value(self, value, key=None):
         lock = self.coordinator.control_locks.setdefault(self.iot_id, asyncio.Lock())
@@ -48,6 +48,6 @@ class Air352Control(CoordinatorEntity):
                 **(self.coordinator.data or {}),
                 self.iot_id: properties,
             })
-            if self.value(key) == value:
+            if self.read_property(key) == value:
                 return
         raise HomeAssistantError("352 did not confirm the requested setting")

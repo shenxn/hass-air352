@@ -40,7 +40,7 @@ class Air352Number(Air352Control, NumberEntity):
 
     @property
     def native_value(self):
-        return self.value()
+        return self.read_property()
 
     async def async_set_native_value(self, value):
         if not float(value).is_integer() or not self.native_min_value <= value <= self.native_max_value:
