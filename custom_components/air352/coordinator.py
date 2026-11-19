@@ -23,6 +23,7 @@ class Air352Coordinator(DataUpdateCoordinator):
         self.api = api
         self.devices: list[dict] = []
         self.device_infos: dict[str, dict] = {}
+        self.control_locks: dict[str, asyncio.Lock] = {}
 
     async def async_setup(self) -> None:
         try:

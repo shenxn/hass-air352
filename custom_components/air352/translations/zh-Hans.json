@@ -27,6 +27,24 @@
     }
   },
   "entity": {
+    "number": {
+      "targethumidity": {
+        "name": "目标湿度"
+      },
+      "windspeed": {
+        "name": "风量档位"
+      }
+    },
+    "select": {
+      "workmode": {
+        "name": "工作模式",
+        "state": {
+          "auto": "自动",
+          "sleep": "睡眠",
+          "manual": "手动"
+        }
+      }
+    },
     "sensor": {
       "surpluswater": { "name": "主水箱剩余水量" },
       "extendedwater": { "name": "增程水箱剩余水量" },

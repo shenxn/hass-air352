@@ -27,6 +27,24 @@
     }
   },
   "entity": {
+    "number": {
+      "targethumidity": {
+        "name": "Target Humidity"
+      },
+      "windspeed": {
+        "name": "Fan Speed"
+      }
+    },
+    "select": {
+      "workmode": {
+        "name": "Operating Mode",
+        "state": {
+          "auto": "Auto",
+          "sleep": "Sleep",
+          "manual": "Manual"
+        }
+      }
+    },
     "sensor": {
       "surpluswater": { "name": "Main Tank Water Level" },
       "extendedwater": { "name": "Extension Tank Water Level" }
